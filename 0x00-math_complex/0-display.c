@@ -7,15 +7,14 @@
 
 void display_complex_number(complex c)
 {
-if (c.im != 0)
-{
-	if (c.im < 0)
-		printf("%d - %di\n", c.re, -c.im);
-	if (c.im == 0)
-		printf("%d\n", c.re);
-	if (c.im > 0)
-		printf("%d + %di\n", c.re, c.im);
-}
-else
-	 printf("%d\n", c.re);
+if (c.im == -1)
+        printf("%d - i\n", c.re);
+if (c.im < 0)
+	printf("%d - %di\n", c.re, -c.im);
+if (c.im == 0)
+	printf("%d\n", c.re);
+if (c.im == 1)
+	printf("%d + i\n", c.re);
+if (c.im > 0)
+	printf("%d + %di\n", c.re, c.im);
 }
