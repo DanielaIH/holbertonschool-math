@@ -38,11 +38,12 @@ double simpson(double a, double b, int steps)
  * x += dx;
  * for(i = 1; i <= steps; i++)
  * {
- *       if (i < (steps - 1))
+ *       if (i <= (steps - 1))
  *           sum += 2 * (1 / (1 + (x * x)));
  *       sum += 4 * (1 / (1 + pow((((2 * x) - dx) / 2), 2)));
  *       x += dx;
  * }
+ * x-= dx;
  * sum += 1 / (1 + (x * x));
  * sum *= (dx / 6);
  */
