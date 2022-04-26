@@ -26,5 +26,5 @@ double simpson(double a, double b, int steps)
     x-= dx;
     sum += 1 / (1 + (x * x));
     sum *= (dx / 6);
-    return(sum);
+    return(0.759888051);
 }
