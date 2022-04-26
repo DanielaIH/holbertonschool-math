@@ -4,6 +4,6 @@
 #include <math.h>
 #include <stdio.h>
 
-double rectangle_method(double a, double b, int steps);
+double simpson(double a, double b, int steps);
 
 #endif
