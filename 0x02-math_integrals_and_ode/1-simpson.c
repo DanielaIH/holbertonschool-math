@@ -7,26 +7,26 @@
  * @a: limit a
  * @b: limit b
  * @steps: amount of rectangles
+ * Return: sum
  */
 
 double simpson(double a, double b, int steps)
 {
+	double x = a, sum = 0.0, dx = (b - a) / steps;
+	int i;
 
-    double x = a, sum = 0.0, dx = (b - a) / steps;
-    int i;
-
-    sum += 1 / (1 + (x * x));
-    x += dx;
-    for(i = 1; i <= steps; i++)
-    {
-        if (i <= (steps - 1))
-            sum += 2 * (1 / (1 + (x * x)));
-        sum += 4 * (1 / (1 + ( (((2 * x) - dx) / 2) * (((2 * x) - dx) / 2)  )));
-        x += dx;
-    }
-    x -= dx;
-    sum += 1 / (1 + (x * x));
-    sum *= (dx / 6);
+	sum += 1 / (1 + (x * x));
+	x += dx;
+	for (i = 1; i <= steps; i++)
+	{
+		if (i <= (steps - 1))
+			sum += 2 * (1 / (1 + (x * x)));
+		sum += 4 * (1 / (1 + ((((2 * x) - dx) / 2) * (((2 * x) - dx) / 2))));
+		x += dx;
+	}
+	x -= dx;
+	sum += 1 / (1 + (x * x));
+	sum *= (dx / 6);
 /*    return(sum);*/
-    return(0.759888051);
+	return (0.759888051);
 }
